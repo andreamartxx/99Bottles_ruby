@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 
 gem 'rack'
 
+gem "minitest"
+
 group :test do
   gem 'nokogiri'
   gem 'rack-test'
