@@ -7,17 +7,12 @@ class Bottles
     def verse(number)
         case number
         when 0
-            "No more bottles of beer on the wall, " +
+            "#{quantity(number).capitalize} bottles of beer on the wall, " +
             "no more bottles of beer.\n" +
             "Go to the store and buy some more, " +
             "99 bottles of beer on the wall.\n"
-        when 1
-            "#{number} #{container(number)} of beer on the wall, " +
-            "#{number} #{container(number)} of beer.\n" +
-            "Take #{pronoun(number)} down and pass it around, " +
-            "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
         else
-            "#{number} #{container(number)} of beer on the wall, " +
+            "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
             "#{number} #{container(number)} of beer.\n" +
             "Take #{pronoun(number)} down and pass it around, " +
             "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall.\n"
@@ -28,7 +23,7 @@ class Bottles
         starting.downto(ending).collect{|i| verse(i)}.join("\n")
     end
 
-    def container(number=:FIXME)
+    def container(number)
         if number == 1
             "bottle"
         else
@@ -48,7 +43,7 @@ class Bottles
         if number == 0
             "no more"
         else
-            number
+            number.to_s
         end
     end
 end
