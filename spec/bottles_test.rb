@@ -22,7 +22,7 @@ class BottlesTest < Minitest::Test
         expected = "2 bottles of beer on the wall, " +
             "2 bottles of beer.\n" +
             "Take one down and pass it around, " +
-            "1 bottles of beer on the wall.\n"
+            "1 bottle of beer on the wall.\n"
         assert_equal expected, Bottles.new.verse(2)
     end
         
