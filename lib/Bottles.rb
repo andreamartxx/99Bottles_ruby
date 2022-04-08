@@ -1,4 +1,9 @@
 class Bottles
+
+    def song
+        verses(99, 0)
+    end
+
     def verse(number)
         case number
         when 0
@@ -25,10 +30,6 @@ class Bottles
     end
 
     def verses(starting,ending)
-        if starting == 99
-            verse(99) + "\n" + verse(98)
-        else
-            verse(2) + "\n" + verse(1) + "\n" + verse(0)
-        end
+        starting.downto(ending).collect{|i| verse(i)}.join("\n")
     end
 end
